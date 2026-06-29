@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI QE Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <header>
+            <div class="logo">
+                <div class="icon">🚀</div>
+                <h1>AI Quality Engineering (AI-QE)</h1>
+            </div>
+            <div class="status-indicator">
+                <div class="pulse"></div>
+                System Operational
+            </div>
+        </header>
+
+        <main>
+            <!-- Pipeline Section -->
+            <section class="activity-section">
+                <h2>Pipeline status</h2>
+                <div id="matrix-container">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
+            <!-- Server Status Section -->
+            <section class="activity-section">
+                <h2>server status</h2>
+                <div class="server-grid" id="server-grid">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
+            <!-- MCP Tool Integrations Section -->
+            <section class="activity-section">
+                <h2>AI Context Providers (MCP Servers)</h2>
+                <div class="mcp-grid">
+                    <div class="mcp-card">
+                        <div class="mcp-icon">🐙</div>
+                        <div class="mcp-info">
+                            <div class="mcp-name">GitHub / GitLab</div>
+                            <div class="mcp-status">Connected</div>
+                        </div>
+                    </div>
+                    <div class="mcp-card">
+                        <div class="mcp-icon">🔷</div>
+                        <div class="mcp-info">
+                            <div class="mcp-name">Jira / Linear</div>
+                            <div class="mcp-status">Connected</div>
+                        </div>
+                    </div>
+                    <div class="mcp-card">
+                        <div class="mcp-icon">🐶</div>
+                        <div class="mcp-info">
+                            <div class="mcp-name">Datadog APM</div>
+                            <div class="mcp-status">Connected</div>
+                        </div>
+                    </div>
+                    <div class="mcp-card">
+                        <div class="mcp-icon">☁️</div>
+                        <div class="mcp-info">
+                            <div class="mcp-name">AWS CloudWatch</div>
+                            <div class="mcp-status">Connected</div>
+                        </div>
+                    </div>
+                    <div class="mcp-card">
+                        <div class="mcp-icon">💬</div>
+                        <div class="mcp-info">
+                            <div class="mcp-name">Slack Alerts</div>
+                            <div class="mcp-status">Connected</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Interventions Section -->
+            <section class="activity-section">
+                <h2>AI Interventions & RCA Logs</h2>
+                <div class="logs-container" id="logs-container">
+                    <!-- Logs will be populated here by app.js -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Floating AI Chat Assistant -->
+    <div class="chat-widget">
+        <div class="chat-header">
+            <span>✨ AI Quality Assistant</span>
+            <span class="minimize-btn" id="minimize-btn">−</span>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message ai-msg">Hello! I am monitoring the pipeline. Let me know if you need any tests fixed.</div>
+        </div>
+        <div class="chat-suggestions">
+            <div class="suggestion-pill">Fix the unit tests</div>
+            <div class="suggestion-pill">Fix regression schema</div>
+            <div class="suggestion-pill">Analyze performance</div>
+            <div class="suggestion-pill">Rollback staging</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Type a prompt...">
+            <button id="chat-submit">Send</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
